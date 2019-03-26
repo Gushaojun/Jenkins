@@ -1,0 +1,22 @@
+server:
+  port: 8002
+#指定注册中心地址
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    serviceUrl:
+      defaultZone: http://192.168.125.70:8000/eureka/
+
+#服务的名称
+spring:
+  application:
+    name: order-service
+
+#修改调用超时时间
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 2000
+        readTimeout: 2000
